@@ -21,20 +21,23 @@ Functions with the next instructions:
 # Pseudocode
 Ask the user (via prompt) their choice.
 When the user writes their choice, we have to verify the next steps.
-1. They have written one of the three options (rock, paper and scissors).
-2. No matter how they wrote that option, we are going to user ".tolowercase" function to make it validate for the next tasks.
-3. If the user wrote any other thing, we are going to ask them again to write it.
+1. No matter how they wrote that option, we are going to use the ".toLowerCase" function to make it validate for the next tasks.
+2. They have to write one of the three options (rock, paper and scissors).
+3. If the user wrote any other thing, we show an alert and ask them again to write it using the same function.
 
-After validating those steps, we'll store that data into a variable and return it to user it later.
+After validating those steps, we return the choice to use it later.
 While we have the user's choice, we are going to generate the machine's choice randomly.
 We are going to create a function that choose between the options.
-1. The options will be stored in an array (those options will be lowercase too).
-2. Then, we are going to use a Random library, with a limitiation between 0 and 2 (becuase the array has 3 elemnts that counts since 0 index).
-3. With that choose, we are going to extract the random elemnt by the number choose in the random function.
+1. The options will be stored in an array (rock, paper and scissors).
+2. Then, we are going to use a random function, with a limitation between 0 and 2 (because the array has 3 elements that counts since 0 index).
+3. With that choose, we are going to extract the random element by the number choose in the random function.
 
 After getting the machine and user's choice, we are going to make the comparative with another function.
-1. We are going to recollect the machine and user's options. 
-2. We are going to create two functions: One to make the comparetive, another one to convert the choices into numbers, and the other way around. Why? Becuase the contraste between numbers is better and noticeable than make the comparative among every possible possibility.
-3. Then, we are going to add the possible victoures to another variable called rounds.
+1. We are going to recollect the machine and user's options.
+2. We are going to make the comparative directly matching the combinations (if it is a draw, if the user wins, or if the machine wins).
+3. Depending on the winner, we are going to add the victory to a variable called rounds (user rounds or machine rounds) and show a message.
 
-Note: This README.ME will change as the project makes progress.
+To make the game work, we are going to put everything together in a main function.
+1. We are going to repeat the game in a loop while the user and the machine have less than 5 winning rounds.
+2. When someone gets 5 rounds, the loop stops.
+3. Finally, we are going to use another function to display the final winner of the best of five.
