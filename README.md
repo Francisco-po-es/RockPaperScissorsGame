@@ -5,7 +5,7 @@ In this project, I am going to use Problem Solving technique, which includes pla
 
 # Plan
 - Does your program have a user interface? What will it look like? What functionality will the interface have?
-As I explain before, I will not use CSS language at this moment.
+As I explain before, I will not use any CSS or HTML file at this moment, except the one that I need to use javascript.
 - What inputs will your program have? Will the user enter data or will you get input from somewhere else?
 The user will enter data by prompting, and I will save his answers in a variable called "userChoice".
 - What’s the desired output?
