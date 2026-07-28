@@ -1,53 +1,30 @@
+let body = document.querySelector('body');
 let rockButton = document.getElementById("rock");
 let paperButton = document.getElementById("paper");
 let scissorsButton = document.getElementById("scissors");
 let div = document.getElementById("textContainer");
-let spanRounds = document.createElement("span");
-let body = document.querySelector('body');
+
 let resetButton = document.createElement('button')
 resetButton.setAttribute('id', 'resetButton');
 resetButton.textContent = 'RESET';
 
+let spanRounds = document.createElement("span");
 div.appendChild(spanRounds);
+
 let userChoice;
 let gameActive = true;
+let userRounds = 0;
+let machineRounds = 0;
 
 function getUserChoice(buttonSelected) {
     return userChoice = buttonSelected.target.id;
 }
-
-rockButton.addEventListener("click", getUserChoice);
-rockButton.addEventListener("click", runGame);
-paperButton.addEventListener("click", getUserChoice);
-paperButton.addEventListener("click", runGame);
-scissorsButton.addEventListener("click", getUserChoice);
-scissorsButton.addEventListener("click", runGame);
-
-function resetGame() {
-    userRounds = 0;
-    machineRounds = 0;
-    userChoice;
-    gameActive  = true;
-    body.style.background = "url('https://thumbs.dreamstime.com/b/demostraci%C3%B3n-de-la-mano-del-hombre-un-piedra-papel-o-tijera-juego-153788684.jpg')";
-    body.style.backgroundSize = 'cover';
-    body.style.backgroundPosition = 'left bottom';
-    resetButton.remove();
-    spanRounds.textContent = "";
-    div.style.backgroundColor = '';
-    div.style.color = '';
-}
-
-resetButton.addEventListener('click', resetGame);
 
 function generateMachineChoice() {
     let choices = ["rock", "paper", "scissors"];
     let randomIndex = Math.floor(Math.random() * 3);
     return choices[randomIndex];
 }
-
-let userRounds = 0;
-let machineRounds = 0;
-
 
 function comparativeChoices(userOption, machineOption) {
     if (userOption === machineOption) {
@@ -78,6 +55,19 @@ function comparativeChoices(userOption, machineOption) {
     }
 }
 
+function displayWinner() {
+    if (userRounds > machineRounds) {
+        spanRounds.textContent = "You won against the machine the best five of rounds! Congrats!";
+        console.log("You won against the machine the best five of rounds! Congrats!");
+        body.style.background = "url('https://preview.redd.it/supermega-fans-when-matt-ryan-say-yeah-guys-weve-got-a-lot-v0-d2r264x9rj481.jpg?auto=webp&s=db955ff3aa5c9b73d06ebc5c43dd3679479b449a')";
+        body.style.backgroundSize = 'cover';
+    } else {
+        spanRounds.textContent = "You lost. The machine got 5 winning rounds. Im sorry.";
+        console.log("You lost. The machine got 5 winning rounds. Im sorry.");
+        body.style.background = "url('https://img.magnific.com/free-photo/sitting-people-watching-football-public-place-night_1268-18316.jpg')";
+        body.style.backgroundSize = 'cover';
+    }
+}
 
 function runGame() {
     if (gameActive) {
@@ -94,17 +84,24 @@ function runGame() {
     
 }
 
-function displayWinner() {
-    if (userRounds > machineRounds) {
-        spanRounds.textContent = "You won against the machine the best five of rounds! Congrats!";
-        console.log("You won against the machine the best five of rounds! Congrats!");
-        body.style.background = "url('https://preview.redd.it/supermega-fans-when-matt-ryan-say-yeah-guys-weve-got-a-lot-v0-d2r264x9rj481.jpg?auto=webp&s=db955ff3aa5c9b73d06ebc5c43dd3679479b449a')";
-        body.style.backgroundSize = 'cover';
-    } else {
-        spanRounds.textContent = "You lost. The machine got 5 winning rounds. Im sorry.";
-        console.log("You lost. The machine got 5 winning rounds. Im sorry.");
-        body.style.background = "url('https://img.magnific.com/free-photo/sitting-people-watching-football-public-place-night_1268-18316.jpg')";
-        body.style.backgroundSize = 'cover';
-    }
+function resetGame() {
+    userRounds = 0;
+    machineRounds = 0;
+    userChoice;
+    gameActive  = true;
+    body.style.background = "url('https://thumbs.dreamstime.com/b/demostraci%C3%B3n-de-la-mano-del-hombre-un-piedra-papel-o-tijera-juego-153788684.jpg')";
+    body.style.backgroundSize = 'cover';
+    body.style.backgroundPosition = 'left bottom';
+    resetButton.remove();
+    spanRounds.textContent = "";
+    div.style.backgroundColor = '';
+    div.style.color = '';
 }
 
+rockButton.addEventListener("click", getUserChoice);
+rockButton.addEventListener("click", runGame);
+paperButton.addEventListener("click", getUserChoice);
+paperButton.addEventListener("click", runGame);
+scissorsButton.addEventListener("click", getUserChoice);
+scissorsButton.addEventListener("click", runGame);
+resetButton.addEventListener('click', resetGame);

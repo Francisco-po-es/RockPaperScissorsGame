@@ -32,7 +32,6 @@ body {
     border: solid;
 }
 
-
 #rock:hover, #paper:hover, #scissors:hover {
     background-color: #0b5ed7;
 }
