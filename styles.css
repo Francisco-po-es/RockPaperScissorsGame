@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    background: url("https://thumbs.dreamstime.com/b/demostraci%C3%B3n-de-la-mano-del-hombre-un-piedra-papel-o-tijera-juego-153788684.jpg");
+    background-size: cover;
+    background-position: left bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100vh;
+    gap: 8px;
+}
+
+#rock, #paper, #scissors{
+    color: #000000;
+    background-color: #0d6efd;
+    border-color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: .25rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: solid;
+}
+
+
+#rock:hover, #paper:hover, #scissors:hover {
+    background-color: #0b5ed7;
+}
+
+#textContainer {
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    user-select: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: .25rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+}
+
+#resetButton {
+    color: #000000;
+    background-color: #ddda21;
+    border-color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: .25rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: solid;
+}
+
+#resetButton:hover {
+    background-color: #b3b01d;
+}
